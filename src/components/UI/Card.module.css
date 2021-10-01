@@ -4,6 +4,8 @@
   font-size: 2rem;
   width: 30%;
   height: 40rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .card h4 {
@@ -19,7 +21,7 @@
   font-size: 1.2rem;
 }
 
-.card li {
+/* .card li {
   border-bottom: 1.5px solid rgb(160, 158, 158);
   list-style: none;
-}
+} */

@@ -6,3 +6,15 @@
   max-width: 170rem;
   margin: 1rem auto;
 }
+/* Add media query in Card too */
+
+/* @media only screen and (min-width: 600px) {
+  .data_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 97%;
+    max-width: 170rem;
+    margin: 1rem auto;
+  }
+} */

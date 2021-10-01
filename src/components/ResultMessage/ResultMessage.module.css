@@ -1,0 +1,18 @@
+.result_message {
+  width: 80%;
+  max-width: 60rem;
+  margin: 2rem auto 4rem;
+  height: 20rem;
+  color: purple;
+  background-color: rgb(39, 29, 29);
+  color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.message {
+  font-size: 2rem;
+  margin-top: 3rem;
+  padding: 0 4rem;
+}
