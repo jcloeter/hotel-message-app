@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Templates from "./Templates";
 import Guests from "./Guests";
 import Companies from "./Companies";
+import styles from "./DataGroup.module.css";
 
 const DataGroups = () => {
   // useEffect(() => {
@@ -16,7 +17,7 @@ const DataGroups = () => {
   // });
 
   return (
-    <div>
+    <div className={styles.data_group}>
       <Templates />
       <Companies />
       <Guests />

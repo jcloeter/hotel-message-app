@@ -1,7 +1,8 @@
 import React from "react";
+import Card from "../UI/Card";
 
 const Templates = () => {
-  return <div></div>;
+  return <Card>Templates</Card>;
 };
 
 export default Templates;

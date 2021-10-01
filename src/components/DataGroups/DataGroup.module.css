@@ -1,0 +1,8 @@
+.data_group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 97%;
+  max-width: 170rem;
+  margin: 1rem auto;
+}
