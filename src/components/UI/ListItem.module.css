@@ -2,7 +2,15 @@
   list-style: none;
   border-bottom: 1.5px solid rgb(160, 158, 158);
   font-size: 1.4rem;
-  padding: 1rem 0 1rem 2rem;
+  padding: 1rem 1rem 1rem 2rem;
   text-align: left;
   cursor: pointer;
+}
+
+.list_item:hover {
+  background-color: rgb(236, 227, 227);
+}
+
+.list_item:active {
+  background-color: red;
 }

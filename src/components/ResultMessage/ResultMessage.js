@@ -6,7 +6,7 @@ const ResultMessage = () => {
   return (
     <div>
       <div className={styles.result_message}>
-        <h4>Message</h4>
+        <h2>Message</h2>
         <div className={styles.message}>
           Good TIMEGREETING FIRSTNAME and welcome to THEHOTEL. Please enjoy your
           stay.

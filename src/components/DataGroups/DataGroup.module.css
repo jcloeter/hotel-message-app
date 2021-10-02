@@ -1,6 +1,6 @@
 .data_group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 97%;
   max-width: 170rem;
@@ -8,7 +8,7 @@
 }
 /* Add media query in Card too */
 
-/* @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   .data_group {
     display: flex;
     flex-direction: row;
@@ -17,4 +17,4 @@
     max-width: 170rem;
     margin: 1rem auto;
   }
-} */
+}
