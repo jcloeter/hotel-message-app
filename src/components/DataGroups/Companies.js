@@ -6,17 +6,61 @@ import styles from "./Companies.module.css";
 
 const Companies = () => {
   const companyArr = [
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
-    { comp: "The Grand Budapest Hotel", country: "Republic of Zubrowka" },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 1,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 2,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 3,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 4,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 5,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 6,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 7,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 8,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 9,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 10,
+    },
+    {
+      comp: "The Grand Budapest Hotel",
+      country: "Republic of Zubrowka",
+      id: 11,
+    },
   ];
   return (
     <Card className={styles.companies}>
@@ -25,7 +69,7 @@ const Companies = () => {
       <ItemContainer>
         {companyArr.map((obj) => {
           return (
-            <ListItem>
+            <ListItem key={obj.id}>
               <div>
                 <strong>{obj.comp}</strong>
               </div>

@@ -9,6 +9,6 @@
 
 // console.log(guests);
 
-const jsonData = require("./Guests.json");
+// const jsonData = require("./Guests.json");
 
-console.log(jsonData);
+// console.log(jsonData);
