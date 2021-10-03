@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import ListItem from "../UI/ListItem";
 const Guests = () => {
+  const [guests, setGuests] = useState([]);
+
+  useEffect(() => {
+    const getData = async function () {
+      const jsonData = require("../../data.json/Guests.json");
+      // console.log(jsonData);
+      setGuests(() => jsonData);
+    };
+    getData();
+  }, [guests]);
+
   return (
     <Card>
       <h4>Guests</h4>
-      <ListItem>Candy Pace</ListItem>
-      <ListItem>Thomas Stevens</ListItem>
-      <ListItem>Jason Dunfrey</ListItem>
-      <ListItem>Carl Matthews</ListItem>
-      <ListItem>Damarcus Marshall</ListItem>
-      <ListItem>Jason Bauer</ListItem>
-      <ListItem>David Smith</ListItem>
+      {guests.length > 0
+        ? guests.map((guest) => {
+            return <ListItem key={guest.id}>{guest.firstName}</ListItem>;
+          })
+        : null}
     </Card>
   );
 };
