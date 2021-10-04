@@ -10,18 +10,18 @@ const Templates = () => {
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
   useEffect(() => {
-    console.log("template");
-    console.log(template);
+    // console.log("template");
+    // console.log(template);
     const data = require("../../data.json/Templates.json");
     setTemplate(data);
   }, [template]);
 
   const templateItemHandler = (obj) => {
-    console.log(obj);
+    // console.log(obj);
   };
 
   const showModalHandler = () => {
-    console.log("gonna show the modal");
+    // console.log("gonna show the modal");
     setModalIsVisible(true);
   };
   return (

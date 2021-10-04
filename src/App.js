@@ -1,22 +1,21 @@
 import "./App.css";
 import DataGroups from "./components/DataGroups/DataGroups";
 import Header from "./components/Header/Header";
-import ResultMessage from "./components/ResultMessage/ResultMessage";
+import Message from "./components/ResultMessage/Message";
 import React, { useState } from "react";
 
 // import loadGuests from "./data.json/loadJSON";
 function App() {
-  // const [selectedItems, setSelectedItems] = useState("");
+  const [selectedItems, setSelectedItems] = useState("");
 
   const objectChangeHandler = (dataObject) => {
     console.log("app says hi");
-    console.log(dataObject);
-    // setSelectedItems({ templates: "", companies: "", guests: dataObject });
+    setSelectedItems(dataObject);
   };
   return (
     <div className="App">
       <Header />
-      {/* <ResultMessage messageObject={} /> */}
+      <Message messageObject={selectedItems} />
       <DataGroups onObjectChange={objectChangeHandler} />
     </div>
   );

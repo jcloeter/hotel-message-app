@@ -10,7 +10,7 @@ const Companies = () => {
   useEffect(() => {
     const data = require("../../data.json/Companies.json");
     setCompanies(data);
-    console.log(data);
+    // console.log(data);
   }, [companies]);
 
   // const companiesClickHandler = (e) => {
@@ -18,8 +18,8 @@ const Companies = () => {
   // };
 
   const companiesItemHandler = (obj) => {
-    console.log("COMPANY !!!!");
-    console.log(obj);
+    // console.log("COMPANY !!!!");
+    // console.log(obj);
   };
 
   return (

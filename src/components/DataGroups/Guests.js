@@ -31,7 +31,10 @@ const Guests = (props) => {
     props.onSelectedChange(obj, "guests");
     props.onSelectedChange({ name: "Hotel Motel" }, "companies");
     props.onSelectedChange(
-      { message: "Hello and welcome to HOTEL" },
+      {
+        message:
+          "Hello FIRSTNAME LASTNAME and welcome to COMPANY, the oldest hotel in CITY",
+      },
       "templates"
     );
   };

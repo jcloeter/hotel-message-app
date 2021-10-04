@@ -11,28 +11,42 @@ const DataGroups = (props) => {
     templates: "",
   });
 
+  let resultObj = { guests: "", companies: "", templates: "" };
+
   //Trying to make a function that only updates the changed key
   const selectedItemChangeHandler = (obj, type) => {
-    console.log(type);
     if (type === "guests") {
-      setSelectedItems(() => {
-        return { ...selectedItems, guests: obj };
-      });
-      props.onObjectChange({ ...selectedItems, guests: obj });
+      resultObj.guests = obj;
+      props.onObjectChange(resultObj);
+
+      // console.log(resultObj);
+      // console.log(selectedItems);
+      // setSelectedItems(() => {
+      //   return { ...selectedItems, guests: obj };
+      // });
+      // props.onObjectChange({ ...selectedItems, guests: obj });
     }
 
     if (type === "companies") {
-      setSelectedItems(() => {
-        return { ...selectedItems, companies: obj };
-      });
-      props.onObjectChange({ ...selectedItems, companies: obj });
+      resultObj.companies = obj;
+      props.onObjectChange(resultObj);
+
+      // console.log(selectedItems);
+      // setSelectedItems(() => {
+      //   return { ...selectedItems, companies: obj };
+      // });
+      // props.onObjectChange({ ...selectedItems, companies: obj });
     }
 
     if (type === "templates") {
-      setSelectedItems(() => {
-        return { ...selectedItems, templates: obj };
-      });
-      props.onObjectChange({ ...selectedItems, templates: obj });
+      resultObj.templates = obj;
+      props.onObjectChange(resultObj);
+
+      // console.log(selectedItems);
+      // setSelectedItems(() => {
+      //   return { ...selectedItems, templates: obj };
+      // });
+      // props.onObjectChange({ ...selectedItems, templates: obj });
     }
   };
   return (
