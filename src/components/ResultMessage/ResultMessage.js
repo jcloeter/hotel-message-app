@@ -9,7 +9,6 @@ const ResultMessage = () => {
         <h2>Message</h2>
         <div className={styles.message}>
           Good TIMEGREETING FIRSTNAME and welcome to THEHOTEL. Please enjoy your
-          stay.
         </div>
       </div>
     </div>

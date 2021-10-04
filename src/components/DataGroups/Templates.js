@@ -13,6 +13,9 @@ const Templates = () => {
     setTemplate(data);
   }, [template]);
 
+  const templateItemHandler = (obj) => {
+    console.log(obj);
+  };
   return (
     <Card>
       <h4>
@@ -23,21 +26,18 @@ const Templates = () => {
         {template.length > 0
           ? template.map((temp) => {
               return (
-                <ListItem key={temp.id} style={{ "line-spacing": "4rem" }}>
+                <ListItem
+                  key={temp.id}
+                  style={{ "line-spacing": "4rem" }}
+                  info={{ type: "templates", id: temp.id }}
+                  object={temp}
+                  onTemplatesItemClick={templateItemHandler}
+                >
                   {temp.template}
                 </ListItem>
               );
             })
           : null}
-        {/* 
-        <ListItem>
-          Good TIMEOFDAY FIRSTNAME, and welcome to COMPANY. We hope you enjoy
-          your stay in CITY. Filler
-        </ListItem>
-        <ListItem>Greetings and welcome to COMPANY</ListItem>
-        <ListItem>Greetings and welcome to COMPANY</ListItem>
-        <ListItem>Greetings and welcome to COMPANY</ListItem>
-        <ListItem>Greetings FIRSTNAME</ListItem> */}
       </ItemContainer>
     </Card>
   );

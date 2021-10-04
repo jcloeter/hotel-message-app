@@ -4,18 +4,7 @@ import Guests from "./Guests";
 import Companies from "./Companies";
 import styles from "./DataGroup.module.css";
 
-const DataGroups = () => {
-  // useEffect(() => {
-  //   const guestData = fetch("../../data.json/Guests.json")
-  //     .then((res) => {
-  //       // JSON.parse(res);
-  //       res.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  // });
-
+const DataGroups = (props) => {
   return (
     <div className={styles.data_group}>
       <Templates />
