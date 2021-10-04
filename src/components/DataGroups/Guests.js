@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import ListItem from "../UI/ListItem";
 import ItemContainer from "../UI/ItemContainer";
-const Guests = () => {
+const Guests = (props) => {
   const [guests, setGuests] = useState([]);
   const [selectedItem, setSelectedItem] = useState("");
 
@@ -11,7 +11,6 @@ const Guests = () => {
       const jsonData = require("../../data.json/Guests.json");
       setGuests(() =>
         jsonData.map((obj) => {
-          console.log("is this what is changin it ");
           return { ...obj, isSelected: false };
         })
       );
@@ -21,16 +20,20 @@ const Guests = () => {
   }, [guests.id]);
 
   const guestsItemHandler = (obj) => {
-    console.log(obj);
-    guests.map((data, i) => {
-      console.log("changing to false");
+    //1) Change all to unselected:
+    guests.forEach((data) => {
       data.isSelected = false;
-      console.log(data);
     });
-    obj.isSelected = true;
 
-    console.log(obj);
+    //2)Change selected li to true:
+    obj.isSelected = true;
     setSelectedItem(obj);
+    props.onSelectedChange(obj, "guests");
+    props.onSelectedChange({ name: "Hotel Motel" }, "companies");
+    props.onSelectedChange(
+      { message: "Hello and welcome to HOTEL" },
+      "templates"
+    );
   };
   return (
     <Card>

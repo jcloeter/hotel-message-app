@@ -2,23 +2,22 @@ import "./App.css";
 import DataGroups from "./components/DataGroups/DataGroups";
 import Header from "./components/Header/Header";
 import ResultMessage from "./components/ResultMessage/ResultMessage";
+import React, { useState } from "react";
 
 // import loadGuests from "./data.json/loadJSON";
 function App() {
-  // const jsonData = require("./data.json/Companies.json");
+  // const [selectedItems, setSelectedItems] = useState("");
 
-  // loadGuests();
-  // const fs = require("fs");
-
-  // const rawData = fs.readFileSync("Guests.json");
-  // const guests = JSON.parse(rawData);
-
-  // console.log(guests);
+  const objectChangeHandler = (dataObject) => {
+    console.log("app says hi");
+    console.log(dataObject);
+    // setSelectedItems({ templates: "", companies: "", guests: dataObject });
+  };
   return (
     <div className="App">
       <Header />
-      <ResultMessage />
-      <DataGroups />
+      {/* <ResultMessage messageObject={} /> */}
+      <DataGroups onObjectChange={objectChangeHandler} />
     </div>
   );
 }
