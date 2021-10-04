@@ -3,8 +3,6 @@ import styles from "./Message.module.css";
 import CalculatedMessage from "./CalculatedMessage";
 
 const Message = (props) => {
-  console.log("000000000000000000000000");
-  console.log(props.messageObject);
   //Will need to do some guarding against null/und values
   return (
     <>

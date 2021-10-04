@@ -29,7 +29,7 @@ const Guests = (props) => {
     obj.isSelected = true;
     setSelectedItem(obj);
     props.onSelectedChange(obj, "guests");
-    props.onSelectedChange({ name: "Hotel Motel" }, "companies");
+    // props.onSelectedChange({ name: "Hotel Motel" }, "companies");
     props.onSelectedChange(
       {
         message:

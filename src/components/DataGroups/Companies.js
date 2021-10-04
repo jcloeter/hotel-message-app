@@ -4,22 +4,30 @@ import ListItem from "../UI/ListItem";
 import ItemContainer from "../UI/ItemContainer";
 import styles from "./Companies.module.css";
 
-const Companies = () => {
-  const [companies, setCompanies] = useState([]);
+const Companies = (props) => {
+  const [companies, setCompanies] = useState([{ isSelected: false }]);
+  const [selectedItem, setSelectedItem] = useState("");
 
   useEffect(() => {
-    const data = require("../../data.json/Companies.json");
-    setCompanies(data);
-    // console.log(data);
-  }, [companies]);
-
-  // const companiesClickHandler = (e) => {
-  //   console.log("companies click handler");
-  // };
+    const getData = async function () {
+      const jsonData = require("../../data.json/Companies.json");
+      setCompanies(() => {
+        return jsonData.map((obj) => {
+          return { ...obj, isSelected: false };
+        });
+      });
+    };
+    getData();
+  }, [companies.isSelected]);
 
   const companiesItemHandler = (obj) => {
-    // console.log("COMPANY !!!!");
-    // console.log(obj);
+    companies.forEach((data) => {
+      data.isSelected = false;
+    });
+
+    obj.isSelected = true;
+    setSelectedItem(obj);
+    props.onSelectedChange(obj, "companies");
   };
 
   return (
@@ -27,23 +35,25 @@ const Companies = () => {
       <h4>Companies</h4>
 
       <ItemContainer>
-        {companies.length > 0
-          ? companies.map((obj) => {
+        {companies
+          ? companies.map((company) => {
               return (
                 <ListItem
-                  key={obj.id}
-                  info={{ type: "companies", id: obj.id }}
-                  object={obj}
+                  key={company.id}
+                  info={{ type: "companies", id: company.id }}
+                  object={company}
                   onCompaniesItemClick={companiesItemHandler}
+                  type="companies"
+                  isSelected={company.isSelected}
                 >
                   <div>
-                    <strong>{obj.company}</strong>
+                    <strong>{company.company}</strong>
                   </div>
-                  <div>{obj.city}</div>
+                  <div>{company.city}</div>
                 </ListItem>
               );
             })
-          : null}
+          : console.log(`In JSX:` + companies)}
       </ItemContainer>
     </Card>
   );

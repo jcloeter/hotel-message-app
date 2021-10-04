@@ -11,30 +11,36 @@ const DataGroups = (props) => {
     templates: "",
   });
 
+  //This probably isnt getting remembered after each state change. How do we get state to be updated like resultObj is? Or should we use resultObj and find a way for it to be remembered?
   let resultObj = { guests: "", companies: "", templates: "" };
 
-  //Trying to make a function that only updates the changed key
+  //START HERE: Right now the problem is that state is behind, and we are passing an object that doesnt accurately pass unchanged data
   const selectedItemChangeHandler = (obj, type) => {
     if (type === "guests") {
       resultObj.guests = obj;
       props.onObjectChange(resultObj);
-
+      console.log("selectedItems:");
+      console.log(selectedItems);
       // console.log(resultObj);
       // console.log(selectedItems);
-      // setSelectedItems(() => {
-      //   return { ...selectedItems, guests: obj };
-      // });
+      setSelectedItems(() => {
+        return { ...selectedItems, guests: obj };
+      });
       // props.onObjectChange({ ...selectedItems, guests: obj });
     }
 
     if (type === "companies") {
       resultObj.companies = obj;
+      console.log(resultObj);
       props.onObjectChange(resultObj);
 
+      console.log("selectedItems:");
+      console.log(selectedItems);
+
       // console.log(selectedItems);
-      // setSelectedItems(() => {
-      //   return { ...selectedItems, companies: obj };
-      // });
+      setSelectedItems(() => {
+        return { ...selectedItems, companies: obj };
+      });
       // props.onObjectChange({ ...selectedItems, companies: obj });
     }
 

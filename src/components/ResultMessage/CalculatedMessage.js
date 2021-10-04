@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 const CalculatedMessage = (props) => {
   const { guests, companies, templates } = props.messageObject;
+  console.log(companies);
 
   //   useEffect(() => {
   //     console.log(props.messageObject);
