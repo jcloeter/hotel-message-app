@@ -17,7 +17,7 @@ const Guests = (props) => {
     };
 
     getData();
-  }, [guests.id]);
+  }, [guests.isSelected]);
 
   const guestsItemHandler = (obj) => {
     //1) Change all to unselected:

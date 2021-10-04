@@ -2,17 +2,19 @@ import React, { useEffect } from "react";
 
 const CalculatedMessage = (props) => {
   const { guests, companies, templates } = props.messageObject;
+  console.log(templates);
   console.log(companies);
 
-  //   useEffect(() => {
-  //     console.log(props.messageObject);
-  //     parseTemplate(templates);
-  //   }, [templates, props.messageObject]);
+  //Start here and make sure all the right data is being channeled in correctly:
 
   const parseTemplate = (temp) => {
     console.log("parsing:");
-    if (!temp) return;
-    const final = temp.message
+    console.log(temp);
+    console.log(guests);
+    console.log(companies);
+    if (!temp || !temp.template) return;
+
+    const final = temp.template
       .split(" ")
       .map((w) => {
         switch (w) {

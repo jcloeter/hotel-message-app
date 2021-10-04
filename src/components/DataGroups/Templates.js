@@ -5,19 +5,27 @@ import ItemContainer from "../UI/ItemContainer";
 import styles from "./Templates.modules.css";
 import Modal from "../UI/Modal";
 
-const Templates = () => {
+const Templates = (props) => {
   const [template, setTemplate] = useState([]);
   const [modalIsVisible, setModalIsVisible] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(false);
 
   useEffect(() => {
-    // console.log("template");
-    // console.log(template);
-    const data = require("../../data.json/Templates.json");
-    setTemplate(data);
-  }, [template]);
+    const jsonData = require("../../data.json/Templates.json");
+    setTemplate(() => {
+      return jsonData.map((temp) => {
+        return { ...temp, isSelected: false };
+      });
+    });
+  }, [template.isSelected]);
 
   const templateItemHandler = (obj) => {
-    // console.log(obj);
+    template.forEach((temp) => {
+      return (temp.isSelected = false);
+    });
+    obj.isSelected = true;
+    setSelectedItem(obj);
+    props.onSelectedChange(obj, "templates");
   };
 
   const showModalHandler = () => {
@@ -51,6 +59,7 @@ const Templates = () => {
                     info={{ type: "templates", id: temp.id }}
                     object={temp}
                     onTemplatesItemClick={templateItemHandler}
+                    isSelected={temp.isSelected}
                   >
                     {temp.template}
                   </ListItem>

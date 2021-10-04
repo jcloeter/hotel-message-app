@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Templates from "./Templates";
 import Guests from "./Guests";
 import Companies from "./Companies";
 import styles from "./DataGroup.module.css";
+// import { useEffect } from "react/cjs/react.development";
 
 const DataGroups = (props) => {
   const [selectedItems, setSelectedItems] = useState({
@@ -11,18 +12,20 @@ const DataGroups = (props) => {
     templates: "",
   });
 
-  //This probably isnt getting remembered after each state change. How do we get state to be updated like resultObj is? Or should we use resultObj and find a way for it to be remembered?
+  //Destructuring props so we can add funct as dependency:
+  const { onObjectChange } = props;
+  useEffect(() => {
+    console.log("useEffect in Datagroups has run");
+    console.log(selectedItems);
+    onObjectChange(selectedItems);
+  }, [selectedItems, onObjectChange]);
+
   let resultObj = { guests: "", companies: "", templates: "" };
 
-  //START HERE: Right now the problem is that state is behind, and we are passing an object that doesnt accurately pass unchanged data
   const selectedItemChangeHandler = (obj, type) => {
     if (type === "guests") {
       resultObj.guests = obj;
-      props.onObjectChange(resultObj);
-      console.log("selectedItems:");
-      console.log(selectedItems);
-      // console.log(resultObj);
-      // console.log(selectedItems);
+      // props.onObjectChange(resultObj);
       setSelectedItems(() => {
         return { ...selectedItems, guests: obj };
       });
@@ -31,11 +34,11 @@ const DataGroups = (props) => {
 
     if (type === "companies") {
       resultObj.companies = obj;
-      console.log(resultObj);
-      props.onObjectChange(resultObj);
+      // console.log(resultObj);
+      // props.onObjectChange(resultObj);
 
-      console.log("selectedItems:");
-      console.log(selectedItems);
+      // console.log("selectedItems:");
+      // console.log(selectedItems);
 
       // console.log(selectedItems);
       setSelectedItems(() => {
@@ -46,7 +49,11 @@ const DataGroups = (props) => {
 
     if (type === "templates") {
       resultObj.templates = obj;
-      props.onObjectChange(resultObj);
+      console.log("hi");
+      setSelectedItems(() => {
+        return { ...selectedItems, templates: obj };
+      });
+      // props.onObjectChange(resultObj);
 
       // console.log(selectedItems);
       // setSelectedItems(() => {
