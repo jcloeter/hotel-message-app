@@ -30,13 +30,13 @@ const Guests = (props) => {
     setSelectedItem(obj);
     props.onSelectedChange(obj, "guests");
     // props.onSelectedChange({ name: "Hotel Motel" }, "companies");
-    props.onSelectedChange(
-      {
-        message:
-          "Hello FIRSTNAME LASTNAME and welcome to COMPANY, the oldest hotel in CITY",
-      },
-      "templates"
-    );
+    // props.onSelectedChange(
+    //   {
+    //     message:
+    //       "Hello FIRSTNAME LASTNAME and welcome to COMPANY, the oldest hotel in CITY",
+    //   },
+    //   "templates"
+    // );
   };
   return (
     <Card>
