@@ -4,8 +4,8 @@ import styles from "./Header.module.css";
 const Header = () => {
   return (
     <div className={styles.header}>
-      <h1>Hotel React</h1>
-      <h4>Custom Greetings for Custom Customers</h4>
+      <h1>Hotel Greeting Generator</h1>
+      <h4>Greet Customers the Way You'd Like to be Greeted</h4>
     </div>
   );
 };

@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.692);
+  z-index: 10;
 }
 
 .modal {
@@ -18,12 +19,13 @@
   max-width: 50rem;
   /* height: 80vh; */
   /* max-height: 60rem; */
-  padding: 4rem 4rem;
+  padding: 2rem 4rem 3rem;
   border-radius: 10px;
+  z-index: 11;
 }
 
 .modal h4 {
-  margin: 1rem;
+  margin: 0rem 0rem 2rem;
 }
 
 .text_area {

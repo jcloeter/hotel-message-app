@@ -37,9 +37,24 @@ const Templates = (props) => {
     // console.log("gonna show the modal");
     setModalIsVisible(true);
   };
+
+  const addNewTemplateHandler = (str) => {
+    setTemplate((temp) => {
+      return [
+        ...temp,
+        { id: temp.length + 1, template: str, isSelected: false },
+      ];
+    });
+  };
+
   return (
     <>
-      {modalIsVisible ? <Modal onCloseModal={closeModalHandler} /> : null}
+      {modalIsVisible ? (
+        <Modal
+          onCloseModal={closeModalHandler}
+          onSubmitNewTemplate={addNewTemplateHandler}
+        />
+      ) : null}
 
       <Card>
         <div class="template_header">

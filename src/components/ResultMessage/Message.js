@@ -7,11 +7,8 @@ const Message = (props) => {
   return (
     <>
       <div className={styles.result_message}>
-        <h2>Message</h2>
         <div className={styles.message}>
           <CalculatedMessage messageObject={props.messageObject} />
-          {/* {props.messageObject.templates.message} */}
-          {/* {props.messageObject.guests.firstName} */}
         </div>
       </div>
     </>

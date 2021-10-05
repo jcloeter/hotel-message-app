@@ -4,10 +4,6 @@ import getTimeGreeting from "../../Helpers/getTimeGreeting";
 
 const CalculatedMessage = (props) => {
   const { guests, companies, templates } = props.messageObject;
-  console.log(templates);
-  console.log(companies);
-
-  //Start here and make sure all the right data is being channeled in correctly:
 
   const parseTemplate = (temp) => {
     //Initialize Message:

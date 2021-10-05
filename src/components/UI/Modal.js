@@ -1,15 +1,18 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import styles from "./Modal.modules.css";
 import Button from "./Button";
 
 const Modal = (props) => {
-  //Start here by figuring out how to add a ref to the text area:
-  const textareaRef = useRef("");
-  console.log("TEXTAREA:");
-  console.log(textareaRef);
-  const submitTemplateHandler = (e) => {
-    console.log(e);
+  const [textValue, setTextValue] = useState("");
+
+  const textChangeHandler = (e) => {
+    setTextValue(e.target.value.trim());
+  };
+
+  const submitTemplateHandler = () => {
+    console.log(textValue);
     props.onCloseModal();
+    props.onSubmitNewTemplate(textValue);
   };
   return (
     <>
@@ -21,7 +24,8 @@ const Modal = (props) => {
         <form onSubmit={submitTemplateHandler}>
           <textarea
             class="text_area"
-            value={textareaRef.current}
+            // value={textValue}
+            onChange={textChangeHandler}
             placeholder="Start typing to make a template. To use variables and make the template reusable, enter the uppercase words below to use their value.
 
           Example: 'Good **TIME** **FIRSTNAME**.' => 'Good afternoon Sarah.'"
