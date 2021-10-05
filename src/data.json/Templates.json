@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "template": "Hello **FIRSTNAME** and welcome to **COMPANY**. We hope you enjoy your stay in **CITY**. Thanks again **FIRSTNAME**!"
+    "template": "Hello **FIRSTNAME** and welcome to **COMPANY**. We hope you enjoy your stay in **CITY**. Room **ROOM** will be sanitized before you arrive for your stay from **STARTDAY**-**ENDDAY**. Thanks again **FIRSTNAME**!"
   },
   {
     "id": 2,
-    "template": "Good TIME **FIRSTNAME**! We are looking forward to serving you at **COMPANY**. Feel free to visit our front desk to learn more about the exciting things to do in **CITY**."
+    "template": "Good **TIME** **FIRSTNAME**! We are looking forward to serving you at **COMPANY**. Feel free to visit our front desk to learn more about the exciting things to do in **CITY**."
   },
   {
     "id": 3,
@@ -13,10 +13,10 @@
   },
   {
     "id": 4,
-    "template": "As the oldest hotel service in **CITY**, **COMPANY** is looking forward to making your stay in **CITY** the best it can possibly be. Have a great TIME"
+    "template": "As the oldest hotel service in **CITY**, **COMPANY** is looking forward to making your stay in **CITY** the best it can possibly be. Have a great **TIME**."
   },
   {
     "id": 5,
-    "template": "On a rainy TIME, there is still plenty to do at **COMPANY**. Try our 24/7 gym, pool, and sauna!"
+    "template": "On a rainy **TIME**, there is still plenty to do at **COMPANY**. Try our 24/7 gym, pool, and sauna!"
   }
 ]

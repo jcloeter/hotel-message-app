@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
+import getDayOfWeek from "../../Helpers/getDayOfWeek";
+import getTimeGreeting from "../../Helpers/getTimeGreeting";
 
 const CalculatedMessage = (props) => {
   const { guests, companies, templates } = props.messageObject;
@@ -8,39 +10,27 @@ const CalculatedMessage = (props) => {
   //Start here and make sure all the right data is being channeled in correctly:
 
   const parseTemplate = (temp) => {
-    // console.log("parsing:");
-    // console.log(temp);
-    // console.log(guests);
-    // console.log(companies);
-    // if (!temp || !temp.template) return;
-
-    // console.log(temp.template.includes("FIRSTNAME"));
-
-    // // temp.template.replace("FIRSTNAME", guests.firstName);
-    // // temp.template.replace(/LASTNAME/, guests.lastName);
-    // console.log("REGEXXXXXXXXXXXXXXXXXXXXXXXX");
-    // // console.log(temp.template.split(/\W/));
-    // // console.log(temp.template.includes("FIRSTNAME"));
-    // // console.log(temp.template.includes("COMPANY"));
-    // let other = temp.template.slice();
-    // console.log(temp.template.includes("FIRSTNAME"));
-    // const nameStr = "FIRSTNAME";
-    // other = other.replace(nameStr, guests.firstName);
-    // console.log(other);
-
     //Initialize Message:
     if (!guests || !companies)
       return "Select from options below or create your own template";
 
+    getTimeGreeting(guests.reservation.startTimestamp);
+    getDayOfWeek(guests.reservation.startTimestamp);
+
     const varData = [
       { str: "FIRSTNAME", var: guests.firstName },
       { str: "LASTNAME", var: guests.lastName },
+      { str: "ROOM", var: guests.reservation.roomNumber },
       { str: "COMPANY", var: companies.company },
       { str: "CITY", var: companies.city },
+      { str: "STARTDAY", var: getDayOfWeek(guests.reservation.startTimestamp) },
+      { str: "ENDDAY", var: getDayOfWeek(guests.reservation.endTimestamp) },
+      { str: "TIME", var: getTimeGreeting(companies.timezone) },
+
       // { str: "TIME", var: guests.firstName },
     ];
 
-    const final = temp.template
+    const finalStr = temp.template
       .split("**")
       .map((word) => {
         for (let x = 0; x < varData.length; x++) {
@@ -51,8 +41,8 @@ const CalculatedMessage = (props) => {
       })
       .join("");
 
-    console.log(final);
-    return final;
+    console.log(finalStr);
+    return finalStr;
   };
   return <div>{parseTemplate(templates)}</div>;
 };

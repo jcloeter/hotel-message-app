@@ -16,8 +16,9 @@
   background-color: rgb(238, 232, 232);
   width: 90%;
   max-width: 50rem;
-  height: 80vh;
-  max-height: 60rem;
+  /* height: 80vh; */
+  /* max-height: 60rem; */
+  padding: 4rem 4rem;
   border-radius: 10px;
 }
 
@@ -27,12 +28,12 @@
 
 .text_area {
   width: 90%;
-  height: 20%;
+  height: 10rem;
 }
 
 .modal_instructions {
   /* list-style: square; */
-  max-width: 60%;
+  max-width: 70%;
   margin: 2rem auto;
   /* display: flex;
   flex-direction: column;
@@ -43,7 +44,7 @@
 .modal_instructions li {
   list-style: square;
   font-size: 1.7rem;
-  width: 30rem;
+  max-width: 40rem;
   text-align: left;
 }
 
