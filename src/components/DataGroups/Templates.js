@@ -4,6 +4,7 @@ import ListItem from "../UI/ListItem";
 import ItemContainer from "../UI/ItemContainer";
 import styles from "./Templates.modules.css";
 import Modal from "../UI/Modal";
+import Button from "../UI/Button";
 
 const Templates = (props) => {
   const [template, setTemplate] = useState([]);
@@ -28,25 +29,28 @@ const Templates = (props) => {
     props.onSelectedChange(obj, "templates");
   };
 
+  const closeModalHandler = () => {
+    console.log("closing modal");
+    setModalIsVisible(false);
+  };
   const showModalHandler = () => {
     // console.log("gonna show the modal");
     setModalIsVisible(true);
   };
   return (
     <>
-      {modalIsVisible ? <Modal /> : null}
+      {modalIsVisible ? <Modal onCloseModal={closeModalHandler} /> : null}
 
       <Card>
         <div class="template_header">
           <h4>
             Templates
-            <button
-              class="template_button"
-              type="button"
+            <Button
+              className={styles.template_button}
               onClick={showModalHandler}
             >
               Add
-            </button>
+            </Button>
           </h4>
         </div>
         <ItemContainer>

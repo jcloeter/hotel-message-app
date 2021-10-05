@@ -1,7 +1,4 @@
 const getTimeGreeting = (timeZone) => {
-  console.log("TIMEEEEEEEEEE");
-  console.log(timeZone);
-
   const date = new Date();
   let time = date.getHours();
 

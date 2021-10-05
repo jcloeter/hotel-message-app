@@ -26,8 +26,6 @@ const CalculatedMessage = (props) => {
       { str: "STARTDAY", var: getDayOfWeek(guests.reservation.startTimestamp) },
       { str: "ENDDAY", var: getDayOfWeek(guests.reservation.endTimestamp) },
       { str: "TIME", var: getTimeGreeting(companies.timezone) },
-
-      // { str: "TIME", var: guests.firstName },
     ];
 
     const finalStr = temp.template

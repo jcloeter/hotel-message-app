@@ -1,43 +1,65 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Modal.modules.css";
+import Button from "./Button";
 
-const Modal = () => {
-  const closeModalHandler = () => {
-    console.log("closing modal");
+const Modal = (props) => {
+  //Start here by figuring out how to add a ref to the text area:
+  const textareaRef = useRef("");
+  console.log("TEXTAREA:");
+  console.log(textareaRef);
+  const submitTemplateHandler = (e) => {
+    console.log(e);
+    props.onCloseModal();
   };
   return (
     <>
-      <div class="overlay" onClick={closeModalHandler}>
+      <div class="overlay" onClick={props.onCloseModal}>
         Overlay
       </div>
       <div class="modal">
         <h4>Custom Greeting Template</h4>
-        <textarea
-          class="text_area"
-          placeholder="Start typing to make a template. To use variables and make the template reusable, enter the uppercase words below to use their value.
+        <form onSubmit={submitTemplateHandler}>
+          <textarea
+            class="text_area"
+            value={textareaRef.current}
+            placeholder="Start typing to make a template. To use variables and make the template reusable, enter the uppercase words below to use their value.
 
           Example: 'Good **TIME** **FIRSTNAME**.' => 'Good afternoon Sarah.'"
-        ></textarea>
-        <ul class="modal_instructions">
-          <li>
-            <span class="variable">**FIRSTNAME**</span>- First name of customer
-          </li>
-          <li>
-            <span class="variable">**LASTNAME**</span>- Last name of customer
-          </li>
-          <li>
-            <span class="variable">**COMPANY**</span>- Name of hotel or company
-          </li>
-          <li>
-            <span class="variable">**CITY**</span>- Name of city that the
-            company is located in{" "}
-          </li>
-          <li>
-            <span class="variable">**TIME**</span>- "Morning", "Afternoon", or
-            "Evening" used for greeting
-          </li>
-        </ul>
-        <button class="btn_modal">Create</button>
+          ></textarea>
+          <ul class="modal_instructions">
+            <li>
+              <span class="variable">**FIRSTNAME**</span>- First name of
+              customer
+            </li>
+            <li>
+              <span class="variable">**LASTNAME**</span>- Last name of customer
+            </li>
+            <li>
+              <span class="variable">**COMPANY**</span>- Name of hotel or
+              company
+            </li>
+            <li>
+              <span class="variable">**CITY**</span>- Name of city that the
+              company is located in{" "}
+            </li>
+            <li>
+              <span class="variable">**TIME**</span>- "Morning", "Afternoon", or
+              "Evening" used for greeting
+            </li>
+            <li>
+              <span class="variable">**STARTDAY**</span>- Day of week that
+              customer arrives
+            </li>
+            <li>
+              <span class="variable">**ENDDAY**</span>- Day of week that
+              customer leaves
+            </li>
+          </ul>
+          {/* <button class="btn_modal">Create</button> */}
+          <Button className="btn_modal" type="submit">
+            Create
+          </Button>
+        </form>
       </div>
     </>
   );

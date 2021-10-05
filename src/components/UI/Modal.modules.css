@@ -55,14 +55,14 @@
 
 .btn_modal {
   background-color: rgb(7, 128, 128);
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem;
   border-radius: 30px;
   border: none;
   font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
-  letter-spacing: 5px;
+  letter-spacing: 5px; */
 }
 
 .btn-modal:hover {

@@ -1,0 +1,22 @@
+.button {
+  cursor: pointer;
+  padding: 0.7rem 2rem;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 5px;
+  background-color: rgb(41, 175, 175);
+  margin-left: 2rem;
+}
+
+.button:hover {
+  transform: scale(1.01);
+}
+
+.button:active {
+  transform: scale(1.01);
+  transform: translateY(1px);
+}
