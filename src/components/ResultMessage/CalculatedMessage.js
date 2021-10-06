@@ -10,9 +10,6 @@ const CalculatedMessage = (props) => {
     if (!guests || !companies || !templates)
       return "Select an option from each category below or create your own template";
 
-    getTimeGreeting(guests.reservation.startTimestamp);
-    getDayOfWeek(guests.reservation.startTimestamp);
-
     const varData = [
       { str: "FIRSTNAME", var: guests.firstName },
       { str: "LASTNAME", var: guests.lastName },

@@ -1,8 +1,5 @@
 const getDayOfWeek = (timestamp) => {
   const date = new Date(timestamp);
-  console.log(timestamp);
-  console.log(date);
-  console.log(date.getDay());
   const daysOfWeek = [
     "Sunday",
     "Monday",
