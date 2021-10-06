@@ -4,7 +4,7 @@
   justify-content: space-between;
   width: 97%;
   max-width: 170rem;
-  margin: 1rem auto;
+  margin: 1rem auto 0rem;
 }
 /* Add media query in Card too */
 

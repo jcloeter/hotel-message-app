@@ -55,7 +55,7 @@ const Templates = (props) => {
       ) : null}
 
       <Card>
-        <div class="template_header">
+        <div className="template_header">
           <h4>
             Templates
             <Button

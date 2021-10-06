@@ -1,7 +1,7 @@
 Live Link to View Project here:
 https://jcloeter.github.io/hotel-message-app/
 
-To run this react application locally, download the files, install local dependencies with 'npm i', and start the server with 'npx start'.
+To run this react application locally, download the files, install local dependencies with 'npm i', and start the server with 'npm start'.
 
 I chose React.js, javascript, HTML, and CSS because I wanted an application with a user-friendly interface. My application can be divided into two main components: DataGroups and ResultsMessage. DataGroups listens for user input and sends information about the selection upward. When a user has selected an item from all three categories, ResultMessage combines the data into a message which is rendered to the UI.
 

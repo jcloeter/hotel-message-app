@@ -17,46 +17,47 @@ const Modal = (props) => {
   };
   return (
     <>
-      <div class="overlay" onClick={props.onCloseModal}>
+      <div className="overlay" onClick={props.onCloseModal}>
         Overlay
       </div>
-      <div class="modal">
+      <div className="modal">
         <h4>Custom Greeting Template</h4>
         <form onSubmit={submitTemplateHandler}>
           <textarea
-            class="text_area"
+            className="text_area"
             onChange={textChangeHandler}
             placeholder='Start typing to make a template. To use variables and make the template reusable, enter the uppercase words below to use their value.
 
           Example: "Good **TIME** **FIRSTNAME**." => "Good afternoon Sarah."'
           ></textarea>
-          <ul class="modal_instructions">
+          <ul className="modal_instructions">
             Variables:
             <li>
-              <span class="variable">**FIRSTNAME**</span>- First name of
+              <span className="variable">**FIRSTNAME**</span>- First name of
               customer
             </li>
             <li>
-              <span class="variable">**LASTNAME**</span>- Last name of customer
+              <span className="variable">**LASTNAME**</span>- Last name of
+              customer
             </li>
             <li>
-              <span class="variable">**COMPANY**</span>- Name of hotel or
+              <span className="variable">**COMPANY**</span>- Name of hotel or
               company
             </li>
             <li>
-              <span class="variable">**CITY**</span>- Name of city that the
+              <span className="variable">**CITY**</span>- Name of city that the
               company is located in{" "}
             </li>
             <li>
-              <span class="variable">**TIME**</span>- "Morning", "Afternoon", or
-              "Evening" used for greeting
+              <span className="variable">**TIME**</span>- "Morning",
+              "Afternoon", or "Evening" used for greeting
             </li>
             <li>
-              <span class="variable">**STARTDAY**</span>- Day of week that
+              <span className="variable">**STARTDAY**</span>- Day of week that
               customer arrives
             </li>
             <li>
-              <span class="variable">**ENDDAY**</span>- Day of week that
+              <span className="variable">**ENDDAY**</span>- Day of week that
               customer leaves
             </li>
           </ul>

@@ -12,9 +12,9 @@ const ListItem = (props) => {
   return (
     <li
       onClick={itemClickHandler}
-      className={`${styles.list_item} ${props.className}`}
+      className={`${styles.list_item}`}
       style={
-        props.isSelected ? { backgroundColor: "rgba(147, 253, 253, 1)" } : null
+        props.isSelected ? { backgroundColor: "rgba(101, 172, 172, 1)" } : null
       }
     >
       {props.children}
