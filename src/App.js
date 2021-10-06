@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import Message from "./components/ResultMessage/Message";
 import React, { useState } from "react";
 
-// import loadGuests from "./data.json/loadJSON";
 function App() {
   const [selectedItems, setSelectedItems] = useState("");
 

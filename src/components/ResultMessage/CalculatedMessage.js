@@ -8,7 +8,7 @@ const CalculatedMessage = (props) => {
   const parseTemplate = (temp) => {
     //Initialize Message:
     if (!guests || !companies || !templates)
-      return "Select from options below or create your own template";
+      return "Select an option from each category below or create your own template";
 
     getTimeGreeting(guests.reservation.startTimestamp);
     getDayOfWeek(guests.reservation.startTimestamp);
@@ -41,29 +41,3 @@ const CalculatedMessage = (props) => {
 };
 
 export default CalculatedMessage;
-
-//Old solution:
-// if (word.includes("COMPANY"))
-//   return word.replace("COMPANY", companies.company);
-// return word.replace("FIRSTNAME", guests.firstName);
-
-// switch (w) {
-//   case "FIRSTNAME":
-//     return guests.firstName;
-//   case "LASTNAME":
-//     return guests.lastName;
-//   case "COMPANY":
-//     return companies.company;
-//   case "CITY":
-//     return companies.city;
-//   // case "TIME":
-//   //   return ;
-
-//   default:
-//     return w;
-// }
-
-// if (word.includes(variablesData[0].str)) return variablesData[0].var;
-// if (word.includes(variablesData[1].str)) return variablesData[1].var;
-// if (word.includes(variablesData[2].str)) return variablesData[2].var;
-// if (word.includes(variablesData[3].str)) return variablesData[3].var;

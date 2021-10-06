@@ -17,8 +17,6 @@
   background-color: rgb(238, 232, 232);
   width: 90%;
   max-width: 50rem;
-  /* height: 80vh; */
-  /* max-height: 60rem; */
   padding: 2rem 4rem 3rem;
   border-radius: 10px;
   z-index: 11;
@@ -30,17 +28,14 @@
 
 .text_area {
   width: 90%;
-  height: 10rem;
+  height: 13rem;
 }
 
 .modal_instructions {
-  /* list-style: square; */
   max-width: 70%;
   margin: 2rem auto;
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start; */
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .modal_instructions li {
@@ -57,14 +52,6 @@
 
 .btn_modal {
   background-color: rgb(7, 128, 128);
-  /* padding: 1rem 2rem;
-  border-radius: 30px;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #fff;
-  letter-spacing: 5px; */
 }
 
 .btn-modal:hover {

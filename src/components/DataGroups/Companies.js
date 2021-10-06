@@ -5,7 +5,6 @@ import ItemContainer from "../UI/ItemContainer";
 import styles from "./Companies.module.css";
 
 const Companies = (props) => {
-  // const [companies, setCompanies] = useState([{id: isSelected: false }]);
   const [companies, setCompanies] = useState([]);
   const [selectedItem, setSelectedItem] = useState("");
 
@@ -54,7 +53,7 @@ const Companies = (props) => {
                 </ListItem>
               );
             })
-          : console.log(`In JSX:` + companies)}
+          : null}
       </ItemContainer>
     </Card>
   );

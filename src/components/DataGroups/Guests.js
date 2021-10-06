@@ -54,7 +54,9 @@ const Guests = (props) => {
                   onGuestsItemClick={guestsItemHandler}
                   isSelected={guest.isSelected}
                 >
-                  {guest.firstName} {guest.lastName}
+                  <strong>
+                    {guest.firstName} {guest.lastName}
+                  </strong>
                 </ListItem>
               );
             })

@@ -26,11 +26,12 @@ const Modal = (props) => {
           <textarea
             class="text_area"
             onChange={textChangeHandler}
-            placeholder="Start typing to make a template. To use variables and make the template reusable, enter the uppercase words below to use their value.
+            placeholder='Start typing to make a template. To use variables and make the template reusable, enter the uppercase words below to use their value.
 
-          Example: 'Good **TIME** **FIRSTNAME**.' => 'Good afternoon Sarah.'"
+          Example: "Good **TIME** **FIRSTNAME**." => "Good afternoon Sarah."'
           ></textarea>
           <ul class="modal_instructions">
+            Variables:
             <li>
               <span class="variable">**FIRSTNAME**</span>- First name of
               customer
@@ -59,7 +60,6 @@ const Modal = (props) => {
               customer leaves
             </li>
           </ul>
-          {/* <button class="btn_modal">Create</button> */}
           <Button className="btn_modal" type="submit">
             Create
           </Button>
