@@ -30,11 +30,9 @@ const Templates = (props) => {
   };
 
   const closeModalHandler = () => {
-    console.log("closing modal");
     setModalIsVisible(false);
   };
   const showModalHandler = () => {
-    // console.log("gonna show the modal");
     setModalIsVisible(true);
   };
 

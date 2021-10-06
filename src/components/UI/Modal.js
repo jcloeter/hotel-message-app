@@ -9,8 +9,9 @@ const Modal = (props) => {
     setTextValue(e.target.value.trim());
   };
 
-  const submitTemplateHandler = () => {
-    console.log(textValue);
+  const submitTemplateHandler = (e) => {
+    e.preventDefault();
+    if (!textValue) return;
     props.onCloseModal();
     props.onSubmitNewTemplate(textValue);
   };
@@ -24,7 +25,6 @@ const Modal = (props) => {
         <form onSubmit={submitTemplateHandler}>
           <textarea
             class="text_area"
-            // value={textValue}
             onChange={textChangeHandler}
             placeholder="Start typing to make a template. To use variables and make the template reusable, enter the uppercase words below to use their value.
 

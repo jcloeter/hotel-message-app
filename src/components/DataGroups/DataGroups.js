@@ -15,8 +15,6 @@ const DataGroups = (props) => {
   //Destructuring props so we can add funct as dependency:
   const { onObjectChange } = props;
   useEffect(() => {
-    console.log("useEffect in Datagroups has run");
-    console.log(selectedItems);
     onObjectChange(selectedItems);
   }, [selectedItems, onObjectChange]);
 
@@ -25,41 +23,24 @@ const DataGroups = (props) => {
   const selectedItemChangeHandler = (obj, type) => {
     if (type === "guests") {
       resultObj.guests = obj;
-      // props.onObjectChange(resultObj);
       setSelectedItems(() => {
         return { ...selectedItems, guests: obj };
       });
-      // props.onObjectChange({ ...selectedItems, guests: obj });
     }
 
     if (type === "companies") {
       resultObj.companies = obj;
-      // console.log(resultObj);
-      // props.onObjectChange(resultObj);
 
-      // console.log("selectedItems:");
-      // console.log(selectedItems);
-
-      // console.log(selectedItems);
       setSelectedItems(() => {
         return { ...selectedItems, companies: obj };
       });
-      // props.onObjectChange({ ...selectedItems, companies: obj });
     }
 
     if (type === "templates") {
       resultObj.templates = obj;
-      console.log("hi");
       setSelectedItems(() => {
         return { ...selectedItems, templates: obj };
       });
-      // props.onObjectChange(resultObj);
-
-      // console.log(selectedItems);
-      // setSelectedItems(() => {
-      //   return { ...selectedItems, templates: obj };
-      // });
-      // props.onObjectChange({ ...selectedItems, templates: obj });
     }
   };
   return (

@@ -9,8 +9,6 @@ function App() {
   const [selectedItems, setSelectedItems] = useState("");
 
   const objectChangeHandler = (dataObject) => {
-    console.log("app says hi");
-    console.log(dataObject);
     setSelectedItems(dataObject);
   };
   return (

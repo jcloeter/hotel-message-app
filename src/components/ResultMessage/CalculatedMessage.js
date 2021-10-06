@@ -7,7 +7,7 @@ const CalculatedMessage = (props) => {
 
   const parseTemplate = (temp) => {
     //Initialize Message:
-    if (!guests || !companies)
+    if (!guests || !companies || !templates)
       return "Select from options below or create your own template";
 
     getTimeGreeting(guests.reservation.startTimestamp);
@@ -35,7 +35,6 @@ const CalculatedMessage = (props) => {
       })
       .join("");
 
-    console.log(finalStr);
     return finalStr;
   };
   return <div>{parseTemplate(templates)}</div>;
