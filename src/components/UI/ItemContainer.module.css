@@ -1,7 +1,5 @@
 .item_container {
-  /* padding: 0 0rem 1rem; */
   max-height: 40rem;
   overflow: auto;
-  border-bottom: solid grey 1px;
   background-color: #fff;
 }
