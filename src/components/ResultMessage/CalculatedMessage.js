@@ -21,6 +21,7 @@ const CalculatedMessage = (props) => {
       { str: "TIME", var: getTimeGreeting(companies.timezone) },
     ];
 
+    console.log("testing");
     const finalStr = temp.template
       .split("**")
       .map((word) => {

@@ -9,6 +9,7 @@ const getDayOfWeek = (timestamp) => {
     "Friday",
     "Saturday",
   ];
+  console.log(date);
   return daysOfWeek[date.getDay()];
 };
 
